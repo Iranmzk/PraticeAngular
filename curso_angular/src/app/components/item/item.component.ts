@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Product } from 'src/app/Product';
 
 @Component({
   selector: 'app-item',
@@ -8,23 +9,28 @@ import { Component, OnInit } from '@angular/core';
 export class ItemComponent implements OnInit {
   show: boolean = false;
 
-  products = [
+  product: Product[] = [
     {
       name: 'Playstation 5',
       price: 4350.0,
       description: 'Console',
+      departament: 'Eletronic',
     },
     {
-      name: 'Dual Sense',
+      name: 'DualSense',
       price: 399.99,
       description: 'Console controller',
+      departament: 'Eletronic',
     },
     {
       name: 'Overwatch 2 - Playstation',
-      price: 'Free',
-      status: 'Playstation game, free to play',
+      price: 0.0,
+      description: 'Playstation game, free to play',
+      departament: 'Eletronic',
     },
   ];
+
+  priceDetails = '';
 
   testes(): void {
     this.show = !this.show;
@@ -33,4 +39,8 @@ export class ItemComponent implements OnInit {
   constructor() {}
 
   ngOnInit(): void {}
+
+  showPrice(product: Product) {
+    this.priceDetails = 'O valor do ' + product.name + ' é de R$ ' + product.price;
+  }
 }

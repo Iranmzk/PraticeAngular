@@ -1,11 +1,14 @@
 <div class="test">
   <h1>Título do Item</h1>
   <button (click)="testes()">veja detalhes</button>
-  <p *ngIf="show">
-    <li *ngFor="let products of products">
-      Name: {{ products.name }} - price:{{ products.price }} - description:{{
-        products.description
-      }}
-    </li>
-  </p>
+  <ul>
+    <p *ngIf="show">
+      <li *ngFor="let products of product">
+        Name: {{ products.name }} - description:{{ products.description }} -
+        departament: {{ products.departament }}
+        <button (click)="showPrice(products)">Show price</button>
+      </li>
+    </p>
+    <h3>{{ priceDetails }}</h3>
+  </ul>
 </div>
