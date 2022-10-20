@@ -9,6 +9,7 @@ export class PipesComponent implements OnInit {
   sometext = 'TESTANDO O PIPE OPERATOR';
   today = new Date();
   time = new Date();
+  today2: string = '' ;
 
   constructor() {}
 
